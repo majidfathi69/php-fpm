@@ -11,4 +11,4 @@ RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev lib
   docker-php-ext-install imap && \
   docker-php-ext-install pdo && \
   docker-php-ext-install zip && \
-  apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev
+  apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev imap-dev openssl-dev zlib-dev
