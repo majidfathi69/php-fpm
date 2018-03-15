@@ -1,5 +1,5 @@
 FROM php:7.0-fpm-alpine
-RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev imap-dev openssl-dev zlib-dev libxml2-dev libldap2-dev && \
+RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev imap-dev openssl-dev zlib-dev libxml2-dev libldap2-dev -y && \
   docker-php-ext-configure gd \
     --with-gd \
     --with-freetype-dir=/usr/include/ \
