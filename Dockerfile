@@ -14,6 +14,6 @@ imap-dev openssl-dev zlib-dev libxml2-dev libldap2-dev && \
   docker-php-ext-install zip && \
   docker-php-ext-configure soap --enable-soap && \
   docker-php-ext-install soap && \
-  docker-php-ext-configure ldap --with-ldap && \
+  docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ && \
   docker-php-ext-install ldap && \
   apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev
