@@ -13,6 +13,6 @@ RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev lib
   docker-php-ext-install zip && \
   docker-php-ext-configure soap --enable-soap && \
   docker-php-ext-install soap && \
-  docker-php-ext-configure ldap --with-libdir=lib/ && \
+  #docker-php-ext-configure ldap --with-libdir=lib/ && \
   docker-php-ext-install ldap && \
   apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev
