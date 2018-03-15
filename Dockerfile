@@ -1,5 +1,6 @@
-FROM php:7.2-fpm-alpine
-RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev imap-dev openssl-dev zlib-dev libxml2-dev && \
+FROM php:7.0-fpm-alpine
+RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev \
+imap-dev openssl-dev zlib-dev libxml2-dev libldap2-dev && \
   docker-php-ext-configure gd \
     --with-gd \
     --with-freetype-dir=/usr/include/ \
@@ -13,4 +14,6 @@ RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev lib
   docker-php-ext-install zip && \
   docker-php-ext-configure soap --enable-soap &&\
   docker-php-ext-install soap && \
+  docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu && \
+  docker-php-ext-install ldap && \
   apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev
