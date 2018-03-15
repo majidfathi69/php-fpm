@@ -1,5 +1,5 @@
-FROM php:5.6-alpine
-RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev imap-dev openssl-dev zlib-dev libxml2-dev && \
+FROM php:5.6-fpm-alpine
+RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev imap-dev openssl-dev zlib-dev && \
   docker-php-ext-configure gd \
     --with-gd \
     --with-freetype-dir=/usr/include/ \
@@ -11,6 +11,4 @@ RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev lib
   docker-php-ext-install imap && \
   docker-php-ext-install pdo pdo_mysql && \
   docker-php-ext-install zip && \
-  docker-php-ext-configure soap --enable-soap &&\
-  docker-php-ext-install soap && \
   apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev
