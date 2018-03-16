@@ -1,4 +1,4 @@
-FROM php:7.0-fpm-alpine
+FROM php:7.1-fpm-alpine
 RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev imap-dev openssl-dev zlib-dev libxml2-dev openldap-dev libmcrypt-dev libltdl && \
   docker-php-ext-configure gd \
     --with-gd \
