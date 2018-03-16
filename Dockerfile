@@ -1,5 +1,5 @@
 FROM php:7.0-fpm-alpine
-RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev imap-dev openssl-dev zlib-dev libxml2-dev openldap-dev && \
+RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev imap-dev openssl-dev zlib-dev libxml2-dev openldap-dev libmcrypt-dev libltdl && \
   docker-php-ext-configure gd \
     --with-gd \
     --with-freetype-dir=/usr/include/ \
@@ -15,4 +15,6 @@ RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev lib
   docker-php-ext-install soap && \
   #docker-php-ext-configure ldap --with-libdir=lib/ && \
   docker-php-ext-install ldap && \
+  docker-php-ext-configure mcrypt && \
+  && docker-php-ext-install mcrypt && \
   apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev
