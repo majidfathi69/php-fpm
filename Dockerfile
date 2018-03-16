@@ -16,5 +16,5 @@ RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev lib
   #docker-php-ext-configure ldap --with-libdir=lib/ && \
   docker-php-ext-install ldap && \
   docker-php-ext-configure mcrypt && \
-  && docker-php-ext-install mcrypt && \
+  docker-php-ext-install mcrypt && \
   apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev
